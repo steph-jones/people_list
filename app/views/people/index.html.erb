@@ -1,0 +1,20 @@
+<!--
+<h1>People Index Page</h1>
+
+<h1> People </h1>
+<% @people.each do |person| %>
+  <h2><%= person.full_name %></h2>
+  <%= link_to 'Show Person', person_path(person) %>
+<% end %> 
+-->
+
+<h1>People App Index</h1>
+<hr />
+<%= link_to "New Person", new_person_path %>
+
+<% (@people.sort_by { |a| a[:first_name] }).each do |person| %>
+  <h2> <%= person.full_name %> </h2>
+  <%= link_to "Show Person", person_path(person.id) %>
+  <%= link_to "Edit Person", edit_person_path(person.id) %>
+  <%= link_to "Delete Person", person_path(person.id), method: :delete %>
+<% end %>
