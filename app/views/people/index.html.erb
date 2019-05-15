@@ -10,6 +10,8 @@
 
 <h1>People App Index</h1>
 <hr />
+<%= link_to "Lord of the Rings people", lotr_index_path %> <br>
+<br>
 <%= link_to "New Person", new_person_path %>
 
 <% (@people.sort_by { |a| a[:first_name] }).each do |person| %>

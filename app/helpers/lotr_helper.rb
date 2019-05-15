@@ -1,0 +1,2 @@
+module LotrHelper
+end
